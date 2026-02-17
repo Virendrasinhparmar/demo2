@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aarav & Diya | Ceremonial Invitation</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --color-maroon: #3b0f14;
+            --color-gold: #d4af37;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #1a0507;
+            color: #f6efe7;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Animations */
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.9; }
+            25% { transform: scale(0.95) skewX(2deg); }
+            75% { transform: scale(1.05) skewX(-2deg); }
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-flicker { animation: flicker 3s infinite; }
+        .animate-pulse-slow { animation: pulse-slow 4s infinite ease-in-out; }
+        .animate-fall { animation: fall linear infinite; }
+        
+        .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+        
+        /* Staggered Animation Classes */
+        .delay-1000 { animation-delay: 1s; }
+        .delay-2000 { animation-delay: 2s; }
+        .delay-3000 { animation-delay: 3s; }
+        .delay-4000 { animation-delay: 4s; }
+
+        .box-shadow-flame {
+            box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.6), 0 0 20px 5px rgba(255, 69, 0, 0.4);
+        }
+        
+        /* Scroll Reveal State */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Utility */
+        .hidden { display: none !important; }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Custom Scrollbar for desktop */
+        @media (min-width: 768px) {
+            ::-webkit-scrollbar { width: 8px; }
+            ::-webkit-scrollbar-track { background: #1a0507; }
+            ::-webkit-scrollbar-thumb { background: #3b0f14; border: 1px solid #d4af37; border-radius: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Container -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+    
+    <!-- Background Layers -->
+    <div class="fixed inset-0 bg-gradient-to-b from-[#2a0a0e] via-[#3b0f14] to-[#120405] -z-20"></div>
+    <div class="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 -z-10"></div>
+
+    <!-- ==================== LANDING SECTION ==================== -->
+    <section id="landing-section" class="min-h-screen w-full flex flex-col items-center justify-center relative z-50 font-serif overflow-hidden">
+        <div class="z-10 flex flex-col items-center text-center p-6 md:p-8 max-w-2xl animate-fade-in-up w-full">
+            
+            <div class="mb-6 md:mb-8 opacity-80 font-light tracking-[0.2em] text-xs md:text-sm uppercase text-[#d4af37]">
+                || Shree Ganeshay Namah ||
+            </div>
+            
+            <!-- Diya Animation -->
+            <div class="mb-8 md:mb-10 scale-125 md:scale-150 relative flex flex-col items-center justify-center">
+                <!-- Flame -->
+                <div class="relative z-20 w-4 h-4 bg-orange-400 rounded-full animate-flicker box-shadow-flame origin-bottom">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-3 bg-yellow-200 rounded-full blur-[1px]"></div>
+                </div>
+                <!-- Lamp Body -->
+                <div class="z-10 w-16 h-8 bg-gradient-to-b from-[#d4af37] to-[#8a6e18] rounded-b-full border-t-4 border-[#f6efe7] shadow-lg relative top-[-2px]"></div>
+                <!-- Glow -->
+                <div class="absolute bottom-[-10px] w-20 h-4 bg-[#ffcc88] opacity-20 blur-xl rounded-full animate-pulse-slow"></div>
+            </div>
+
+            <h1 class="text-lg md:text-2xl font-light italic mb-4 opacity-0 animate-fade-in-up delay-1000">
+                With the blessings of our families
+            </h1>
+
+            <!-- Responsive Typography -->
+            <div class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-playfair text-[#d4af37] drop-shadow-lg mb-6 opacity-0 animate-fade-in-up delay-2000 leading-tight">
+                Aarav <br class="sm:hidden" /> <span class="text-2xl md:text-3xl align-middle mx-1 md:mx-2 text-[#f6efe7]">&</span> Diya
+            </div>
+
+            <p class="text-base md:text-xl font-light tracking-wide mb-10 md:mb-12 opacity-0 animate-fade-in-up delay-3000 max-w-[80%] mx-auto">
+                We invite you to celebrate our sacred union
+            </p>
+
+            <!-- Countdown -->
+            <div id="landing-countdown" class="grid grid-cols-4 gap-3 md:gap-8 mb-10 md:mb-12 text-[#d4af37] opacity-0 animate-fade-in-up delay-3000 w-full max-w-sm md:max-w-xl">
+                <div class="flex flex-col items-center"><span class="text-2xl md:text-4xl font-bold font-playfair" id="days">00</span><span class="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Days</span></div>
+                <div class="flex flex-col items-center"><span class="text-2xl md:text-4xl font-bold font-playfair" id="hours">00</span><span class="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Hrs</span></div>
+                <div class="flex flex-col items-center"><span class="text-2xl md:text-4xl font-bold font-playfair" id="minutes">00</span><span class="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Min</span></div>
+                <div class="flex flex-col items-center"><span class="text-2xl md:text-4xl font-bold font-playfair" id="seconds">00</span><span class="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Sec</span></div>
+            </div>
+
+            <button onclick="enterCeremony()" class="group relative px-8 py-3 md:py-4 bg-[#f6efe7]/10 border border-[#d4af37]/50 rounded-full overflow-hidden transition-all duration-500 hover:bg-[#d4af37]/20 hover:border-[#d4af37] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] opacity-0 animate-fade-in-up delay-4000 cursor-pointer touch-manipulation">
+                <span class="relative z-10 font-playfair tracking-widest text-[#f6efe7] group-hover:text-white transition-colors uppercase text-xs md:text-sm">
+                    Enter Ceremony
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#d4af37]/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+            </button>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <div id="main-content" class="hidden min-h-screen w-full text-[#f6efe7] font-sans selection:bg-[#d4af37] selection:text-[#3b0f14] pb-24 md:pb-0">
+        
+        <!-- Responsive Navigation -->
+        <!-- Mobile: Fixed Bottom | Desktop: Fixed Top -->
+        <nav class="fixed bottom-4 left-4 right-4 md:bottom-auto md:top-0 md:left-0 md:right-0 z-50 flex justify-center py-0 md:py-4 transition-transform duration-500" id="navbar">
+            <div class="glass-panel w-full md:w-auto px-4 md:px-6 py-3 rounded-2xl md:rounded-full flex justify-between md:justify-center items-center gap-2 md:gap-8 text-[10px] md:text-sm tracking-widest uppercase text-[#d4af37] backdrop-blur-xl bg-[#3b0f14]/80 md:bg-[#3b0f14]/60 border border-[#d4af37]/20 shadow-2xl">
+                <a href="#home" class="flex flex-col md:block items-center hover:text-white transition-colors p-2">
+                    <i data-lucide="home" class="w-4 h-4 mb-1 md:hidden"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#story" class="flex flex-col md:block items-center hover:text-white transition-colors p-2">
+                    <i data-lucide="heart-handshake" class="w-4 h-4 mb-1 md:hidden"></i>
+                    <span>Story</span>
+                </a>
+                
+                <!-- Logo Desktop -->
+                <div class="hidden md:flex items-center">
+                    <div class="w-1 h-1 bg-[#d4af37] rounded-full"></div>
+                    <span class="font-playfair text-lg text-white mx-2">A & D</span>
+                    <div class="w-1 h-1 bg-[#d4af37] rounded-full"></div>
+                </div>
+
+                <!-- Logo Mobile (Center) -->
+                <div class="md:hidden flex flex-col items-center justify-center -mt-6 bg-[#3b0f14] p-3 rounded-full border border-[#d4af37] shadow-lg relative z-10">
+                    <div class="font-playfair text-base text-white">A&D</div>
+                </div>
+
+                <a href="#ceremony" class="flex flex-col md:block items-center hover:text-white transition-colors p-2">
+                    <i data-lucide="flower-2" class="w-4 h-4 mb-1 md:hidden"></i>
+                    <span>Rituals</span>
+                </a>
+                <a href="#rsvp" class="flex flex-col md:block items-center hover:text-white transition-colors p-2">
+                    <i data-lucide="mail" class="w-4 h-4 mb-1 md:hidden"></i>
+                    <span>RSVP</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Music Toggle -->
+        <!-- Mobile: Top Right | Desktop: Bottom Right -->
+        <button id="music-toggle" class="fixed top-4 right-4 md:top-auto md:bottom-6 md:right-6 z-50 p-3 rounded-full glass-panel bg-[#d4af37]/20 border border-[#d4af37]/40 hover:bg-[#d4af37]/40 transition-all text-[#d4af37] cursor-pointer touch-manipulation" title="Play Shehnai">
+            <i data-lucide="music" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Home Header -->
+        <header id="home" class="pt-24 md:pt-32 pb-12 md:pb-20 px-6 text-center reveal-on-scroll">
+            <div class="inline-block mb-4 scale-50">
+                <!-- Small Diya Replica -->
+                <div class="relative flex flex-col items-center justify-center">
+                    <div class="relative z-20 w-4 h-4 bg-orange-400 rounded-full animate-flicker box-shadow-flame origin-bottom">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-3 bg-yellow-200 rounded-full blur-[1px]"></div>
+                    </div>
+                    <div class="z-10 w-16 h-8 bg-gradient-to-b from-[#d4af37] to-[#8a6e18] rounded-b-full border-t-4 border-[#f6efe7] shadow-lg relative top-[-2px]"></div>
+                    <div class="absolute bottom-[-10px] w-20 h-4 bg-[#ffcc88] opacity-20 blur-xl rounded-full animate-pulse-slow"></div>
+                </div>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-playfair text-[#d4af37] mb-2 leading-tight">Aarav & Diya</h2>
+            <p class="text-base md:text-lg opacity-70 italic font-playfair">December 12th, 2026 • Udaipur, Rajasthan</p>
+        </header>
+
+        <!-- Story Section -->
+        <section id="story" class="py-12 md:py-20 px-4 md:px-8 max-w-6xl mx-auto">
+            <div class="text-center mb-10 md:mb-16 reveal-on-scroll">
+                <h3 class="text-2xl md:text-3xl font-playfair text-[#d4af37] mb-4">Our Sacred Journey</h3>
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="order-2 md:order-1 relative reveal-on-scroll">
+                    <div class="absolute inset-0 bg-[#d4af37] rounded-t-[10rem] rounded-b-lg blur-xl opacity-20"></div>
+                    <div class="relative glass-card p-2 rounded-t-[10rem] rounded-b-lg border border-[#d4af37]/30 overflow-hidden">
+                        <!-- Responsive image height -->
+                        <div class="h-[350px] md:h-[400px] w-full bg-[#1a0507] relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-[2s]" style="background-image: url('/1.jpg')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#3b0f14] to-transparent opacity-60"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 space-y-6 md:space-y-8 reveal-on-scroll">
+                    <div class="glass-card p-6 md:p-8 rounded-xl border-l-2 border-[#d4af37]">
+                        <div class="flex items-center gap-3 mb-3 text-[#d4af37]">
+                            <i data-lucide="heart" size="18"></i>
+                            <span class="uppercase tracking-widest text-xs font-bold">How We Met</span>
+                        </div>
+                        <p class="font-light leading-relaxed opacity-90 text-sm md:text-base">
+                            It began not with a grand gesture, but a shared silence in the temple courtyard. Amongst the echoing bells and chanting, our eyes met, and souls recognized a familiar friend from lifetimes past.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8 rounded-xl border-l-2 border-[#d4af37]">
+                        <div class="flex items-center gap-3 mb-3 text-[#d4af37]">
+                            <i data-lucide="star" size="18"></i>
+                            <span class="uppercase tracking-widest text-xs font-bold">The Proposal</span>
+                        </div>
+                        <p class="font-light leading-relaxed opacity-90 text-sm md:text-base">
+                            Under a canopy of stars on the banks of Lake Pichola, Aarav didn't just ask for a hand in marriage; he asked for a partnership in dharma, artha, and kama, sealing the promise with a simple ancestral ring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ceremony Section -->
+        <section id="ceremony" class="py-12 md:py-20 px-4 bg-[#150405] relative">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-10 pointer-events-none"></div>
+            
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-10 md:mb-16 reveal-on-scroll">
+                    <h3 class="text-2xl md:text-3xl font-playfair text-[#d4af37] mb-4">Divine Rituals</h3>
+                    <p class="text-xs md:text-sm uppercase tracking-widest opacity-60">Please join us for the celebrations</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 md:gap-8 reveal-on-scroll">
+                    <!-- Tabs - Scrollable on Mobile -->
+                    <div class="flex md:flex-col gap-3 md:gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0 md:w-1/3 no-scrollbar snap-x snap-mandatory" id="ceremony-tabs">
+                        <button onclick="switchTab(0)" class="snap-center shrink-0 tab-btn active flex items-center gap-4 text-left p-3 md:p-4 rounded-xl border transition-all duration-300 min-w-[200px] w-[80vw] md:w-auto bg-[#d4af37] text-[#3b0f14] border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] touch-manipulation">
+                            <img src="/Haldi.jpg" class="w-16 h-16 rounded-lg object-cover" alt="Haldi" />
+                            <div>
+                                <h4 class="font-playfair text-lg md:text-xl mb-1">Haldi & Mehendi</h4>
+                                <p class="text-[10px] md:text-xs uppercase tracking-wider text-[#3b0f14]/70">Dec 11, 10:00 AM</p>
+                            </div>
+                        </button>
+                        <button onclick="switchTab(1)" class="snap-center shrink-0 tab-btn flex items-center gap-4 text-left p-3 md:p-4 rounded-xl border transition-all duration-300 min-w-[200px] w-[80vw] md:w-auto bg-white/5 border-white/10 text-white hover:bg-white/10 touch-manipulation">
+                             <img src="/ring.jpg" class="w-16 h-16 rounded-lg object-cover" alt="Sangeet" />
+                            <div>
+                                <h4 class="font-playfair text-lg md:text-xl mb-1">Sangeet</h4>
+                                <p class="text-[10px] md:text-xs uppercase tracking-wider text-[#d4af37]">Dec 11, 07:00 PM</p>
+                            </div>
+                        </button>
+                        <button onclick="switchTab(2)" class="snap-center shrink-0 tab-btn flex items-center gap-4 text-left p-3 md:p-4 rounded-xl border transition-all duration-300 min-w-[200px] w-[80vw] md:w-auto bg-white/5 border-white/10 text-white hover:bg-white/10 touch-manipulation">
+                             <img src="/couple.jpg" class="w-16 h-16 rounded-lg object-cover" alt="Wedding" />
+                            <div>
+                                <h4 class="font-playfair text-lg md:text-xl mb-1">The Wedding</h4>
+                                <p class="text-[10px] md:text-xs uppercase tracking-wider text-[#d4af37]">Dec 12, 10:00 AM</p>
+                            </div>
+                        </button>
+                        <button onclick="switchTab(3)" class="snap-center shrink-0 tab-btn flex items-center gap-4 text-left p-3 md:p-4 rounded-xl border transition-all duration-300 min-w-[200px] w-[80vw] md:w-auto bg-white/5 border-white/10 text-white hover:bg-white/10 touch-manipulation">
+                             <img src="/4.jpg" class="w-16 h-16 rounded-lg object-cover" alt="Reception" />
+                            <div>
+                                <h4 class="font-playfair text-lg md:text-xl mb-1">Reception</h4>
+                                <p class="text-[10px] md:text-xs uppercase tracking-wider text-[#d4af37]">Dec 12, 08:00 PM</p>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-1 min-h-[400px]" id="ceremony-content">
+                        <!-- Content injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section class="py-12 md:py-20 px-4 max-w-4xl mx-auto reveal-on-scroll">
+            <div class="glass-panel p-6 md:p-12 rounded-2xl border border-[#d4af37]/20 bg-[#3b0f14]/40 backdrop-blur-md text-center">
+                <div class="flex justify-center mb-6 text-[#d4af37]">
+                    <i data-lucide="map-pin" class="w-10 h-10 md:w-12 md:h-12"></i>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-playfair text-[#f6efe7] mb-2">The City Palace</h3>
+                <p class="text-[#d4af37] uppercase tracking-widest mb-8 text-xs md:text-sm">Udaipur, Rajasthan</p>
+                
+                <a href="https://www.google.com/maps/search/?api=1&query=The+City+Palace+Udaipur+Rajasthan" target="_blank" rel="noopener noreferrer" class="block w-full h-48 md:h-64 bg-[#1a0507] rounded-lg mb-8 border border-white/10 flex items-center justify-center relative overflow-hidden group cursor-pointer">
+                    <img src="/udaipur.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 blur-sm transition-transform duration-700 group-hover:scale-110" alt="Map Background"/>
+                    <div class="relative z-10 px-4 py-2 md:px-6 md:py-3 bg-[#d4af37] text-[#3b0f14] font-bold rounded shadow-lg hover:bg-white transition-colors flex items-center gap-2 text-sm md:text-base">
+                        <i data-lucide="map-pin" size="16"></i> Open in Google Maps
+                    </div>
+                </a>
+
+                <!-- Ride Booking Options -->
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <!-- Uber: Deep Link with Destination Pre-filled -->
+                    <a href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=24.576430&dropoff[longitude]=73.683510&dropoff[nickname]=The%20City%20Palace%2C%20Udaipur" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 bg-black text-white rounded-lg border border-white/10 hover:bg-gray-900 transition-colors group">
+                        <i data-lucide="car" class="w-5 h-5"></i>
+                        <span class="font-bold text-sm">Uber</span>
+                    </a>
+                    <!-- Rapido: Link to Service -->
+                    <a href="https://rapido.bike/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 bg-[#f9c935] text-black rounded-lg hover:bg-[#e5b82e] transition-colors group">
+                        <i data-lucide="bike" class="w-5 h-5"></i>
+                        <span class="font-bold text-sm">Rapido</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-sm text-left">
+                    <div class="p-4 rounded bg-white/5 border border-white/5">
+                        <h5 class="text-[#d4af37] font-bold mb-2">Accommodation</h5>
+                        <p class="opacity-80">We have arranged stays at The Taj Lake Palace and The Oberoi Udaivilas. Shuttles provided.</p>
+                    </div>
+                    <div class="p-4 rounded bg-white/5 border border-white/5">
+                        <h5 class="text-[#d4af37] font-bold mb-2">Travel Desk</h5>
+                        <p class="opacity-80">Airport pickups are scheduled from Maharana Pratap Airport. Contact: +91 98765 43210</p>
+                    </div>
+                    <div class="p-4 rounded bg-white/5 border border-white/5">
+                        <h5 class="text-[#d4af37] font-bold mb-2">Dress Code</h5>
+                        <p class="opacity-80">We encourage traditional Indian attire. Please avoid black for the religious ceremony.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section id="rsvp" class="py-12 md:py-20 px-4 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#d4af37] rounded-full blur-[100px] opacity-10"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#d4af37] rounded-full blur-[100px] opacity-10"></div>
+
+            <div class="max-w-xl mx-auto relative z-10 reveal-on-scroll">
+                <div class="text-center mb-8 md:mb-10">
+                    <h3 class="text-3xl md:text-4xl font-playfair text-[#d4af37] mb-2">R.S.V.P</h3>
+                    <p class="text-white/60 font-light text-sm md:text-base">Please grace us with your presence by Nov 1st</p>
+                </div>
+
+                <!-- Success Message (Hidden by default) -->
+                <div id="rsvp-success" class="hidden glass-panel p-8 md:p-12 rounded-2xl border border-[#d4af37] text-center animate-fade-in-up">
+                    <div class="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-6 text-[#3b0f14]">
+                        <i data-lucide="heart" fill="currentColor"></i>
+                    </div>
+                    <h4 class="text-2xl font-playfair text-white mb-2">Thank You!</h4>
+                    <p class="text-white/70">Your response has been recorded. We look forward to celebrating with you.</p>
+                </div>
+
+                <!-- Form -->
+                <form id="rsvp-form" class="glass-panel p-6 md:p-10 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl bg-[#3b0f14]/50">
+                    <div class="space-y-4 md:space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-[#d4af37] mb-2">Full Name</label>
+                            <!-- font-size 16px to prevent iOS zoom -->
+                            <input required type="text" class="w-full bg-white/5 border border-white/10 rounded p-4 text-[#f6efe7] focus:border-[#d4af37] focus:outline-none transition-colors text-base" placeholder="Enter your name">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-[#d4af37] mb-2">Attending</label>
+                                <select class="w-full bg-white/5 border border-white/10 rounded p-4 text-[#f6efe7] focus:border-[#d4af37] focus:outline-none text-base">
+                                    <option value="yes" class="bg-[#3b0f14]">Yes, Joyfully</option>
+                                    <option value="no" class="bg-[#3b0f14]">Regretfully No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-[#d4af37] mb-2">Guests</label>
+                                <select class="w-full bg-white/5 border border-white/10 rounded p-4 text-[#f6efe7] focus:border-[#d4af37] focus:outline-none text-base">
+                                    <option value="1" class="bg-[#3b0f14]">1 Person</option>
+                                    <option value="2" class="bg-[#3b0f14]">2 People</option>
+                                    <option value="3" class="bg-[#3b0f14]">3 People</option>
+                                    <option value="4" class="bg-[#3b0f14]">4 People</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-[#d4af37] mb-2">Message</label>
+                            <textarea class="w-full bg-white/5 border border-white/10 rounded p-4 text-[#f6efe7] focus:border-[#d4af37] focus:outline-none h-24 resize-none text-base" placeholder="Write your blessings..."></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full py-4 bg-[#d4af37] text-[#3b0f14] font-playfair font-bold uppercase tracking-widest hover:bg-white transition-all flex justify-center items-center gap-2 cursor-pointer touch-manipulation">
+                            <span>Send Confirmation</span>
+                            <i data-lucide="send" size="16"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Blessings Section -->
+        <section class="py-12 md:py-20 px-4 bg-[#120405]">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10 md:mb-12 reveal-on-scroll">
+                    <h3 class="text-2xl font-playfair text-[#f6efe7] mb-2">Blessings from Loved Ones</h3>
+                    <div class="flex justify-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-[#d4af37]"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#d4af37] opacity-50"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#d4af37] opacity-20"></div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors reveal-on-scroll">
+                        <p class="font-playfair italic text-lg text-[#d4af37] mb-4">"May your life be as beautiful as this ceremony. Ganpati Bappa Morya!"</p>
+                        <p class="text-xs uppercase tracking-widest opacity-60">- Priya Auntie</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors reveal-on-scroll">
+                        <p class="font-playfair italic text-lg text-[#d4af37] mb-4">"Wishing you a lifetime of love and happiness."</p>
+                        <p class="text-xs uppercase tracking-widest opacity-60">- The Mehtas</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors reveal-on-scroll">
+                        <p class="font-playfair italic text-lg text-[#d4af37] mb-4">"My blessings are always with you. Stay happy forever."</p>
+                        <p class="text-xs uppercase tracking-widest opacity-60">- Grandma</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-16 text-center relative overflow-hidden reveal-on-scroll mb-16 md:mb-0">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent"></div>
+            
+            <div class="mb-8 inline-block scale-50">
+                 <div class="relative flex flex-col items-center justify-center">
+                    <div class="relative z-20 w-4 h-4 bg-orange-400 rounded-full animate-flicker box-shadow-flame origin-bottom">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-3 bg-yellow-200 rounded-full blur-[1px]"></div>
+                    </div>
+                    <div class="z-10 w-16 h-8 bg-gradient-to-b from-[#d4af37] to-[#8a6e18] rounded-b-full border-t-4 border-[#f6efe7] shadow-lg relative top-[-2px]"></div>
+                    <div class="absolute bottom-[-10px] w-20 h-4 bg-[#ffcc88] opacity-20 blur-xl rounded-full animate-pulse-slow"></div>
+                </div>
+            </div>
+            
+            <h2 class="text-2xl md:text-5xl font-playfair text-[#d4af37] mb-6">Your presence is our blessing</h2>
+            
+            <div class="flex justify-center gap-4 md:gap-8 mb-8 text-[#f6efe7]/60 text-xs md:text-sm">
+                <span>#AaravWedsDiya</span>
+                <span>#RoyalUnion</span>
+                <span>#Udaipur2026</span>
+            </div>
+    
+            <p class="text-[10px] md:text-xs text-[#f6efe7]/30 uppercase tracking-widest">
+                © 2026 Nyota Ceremonial Invitation. Designed with Love.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Logic -->
+    <script>
+        // 1. Icons
+        lucide.createIcons();
+
+        // 2. Data
+        const events = [
+            {
+                title: 'Haldi & Mehendi',
+                desc: 'A morning of turmeric, laughter, and henna designs. The Haldi ceremony signifies purification, while Mehendi adorns the bride with intricate patterns of love.',
+                dress: 'Shades of Yellow & Orange',
+                loc: 'Zenana Mahal Courtyard',
+                img: '/haldi.jpg'
+            },
+            {
+                title: 'Sangeet Night',
+                desc: 'An evening of music and dance where both families come together to celebrate the union. Prepare your dancing shoes for a night of Bollywood beats.',
+                dress: 'Glamorous Indo-Western',
+                loc: 'Manek Chowk',
+                img: '/ring.jpg'
+            },
+            {
+                title: 'The Royal Wedding',
+                desc: 'The sacred Pheras will take place during the auspicious Muhurat. Witness the union of two souls in the presence of Agni (Fire).',
+                dress: 'Traditional Indian Royal',
+                loc: 'Jagmandir Island Palace',
+                img: '/couple.jpg'
+            },
+            {
+                title: 'Grand Reception',
+                desc: 'A formal dinner to bless the newlyweds as they embark on their journey together. Fine dining and classical instrumental music.',
+                dress: 'Formal Evening Wear',
+                loc: 'The City Palace Durbar Hall',
+                img: '/4.jpg'
+            }
+        ];
+
+        // 3. Countdown Logic
+        const weddingDate = new Date("2026-12-12T10:00:00").getTime();
+        
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 4. Particles System
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            for(let i=0; i<20; i++) {
+                const p = document.createElement('div');
+                const size = 4 + Math.random() * 6;
+                p.style.left = Math.random() * 100 + '%';
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.animationDelay = Math.random() * 5 + 's';
+                p.style.animationDuration = (10 + Math.random() * 10) + 's';
+                p.className = 'absolute top-[-20px] rounded-full bg-[#d4af37] opacity-20 blur-[1px] animate-fall';
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        // 5. Entrance Logic & Music Control
+        
+        // Music Configuration
+        // REPLACE 'wedding-shehnai.mp3' with your actual file path
+        const audio = new Audio('\Indian 1.wav'); 
+        audio.loop = true;
+        let isPlaying = false;
+        const musicBtn = document.getElementById('music-toggle');
+
+        // Function to update UI state
+        function toggleMusicUI(playing) {
+            if(playing) {
+                musicBtn.innerHTML = '<i data-lucide="x" class="w-5 h-5"></i>';
+                musicBtn.classList.add('animate-pulse-slow');
+                musicBtn.title = "Mute Shehnai";
+            } else {
+                musicBtn.innerHTML = '<i data-lucide="music" class="w-5 h-5"></i>';
+                musicBtn.classList.remove('animate-pulse-slow');
+                musicBtn.title = "Play Shehnai";
+            }
+            lucide.createIcons();
+        }
+
+        // Entrance Function
+        function enterCeremony() {
+            const landing = document.getElementById('landing-section');
+            const main = document.getElementById('main-content');
+            
+            // Start Music Immediately on Interaction (User Click)
+            if (!isPlaying) {
+                isPlaying = true;
+                audio.play().catch(e => console.log("Audio play failed:", e));
+                toggleMusicUI(true);
+            }
+
+            // Fade out landing
+            landing.style.opacity = '0';
+            landing.style.transition = 'opacity 1s ease';
+            
+            setTimeout(() => {
+                landing.classList.add('hidden');
+                main.classList.remove('hidden');
+                main.classList.add('animate-fade-in-up');
+                
+                // Initialize Scroll Observer after content is visible
+                initScrollObserver();
+            }, 1000);
+        }
+
+        // Music Toggle Button Listener
+        musicBtn.addEventListener('click', function() {
+            isPlaying = !isPlaying;
+            if(isPlaying) {
+                audio.play().catch(e => console.log("Audio play failed", e));
+            } else {
+                audio.pause();
+            }
+            toggleMusicUI(isPlaying);
+        });
+
+
+        // 6. Scroll Observer
+        function initScrollObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+        }
+
+        // 7. Tabs Logic
+        function switchTab(index) {
+            // Update Buttons
+            const buttons = document.querySelectorAll('#ceremony-tabs button');
+            buttons.forEach((btn, idx) => {
+                if(idx === index) {
+                    btn.className = "snap-center shrink-0 tab-btn active flex items-center gap-4 text-left p-3 md:p-4 rounded-xl border transition-all duration-300 min-w-[200px] w-[80vw] md:w-auto bg-[#d4af37] text-[#3b0f14] border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] touch-manipulation";
+                    // Update inner text color classes manually for simplicity
+                    btn.querySelector('p').className = "text-[10px] md:text-xs uppercase tracking-wider text-[#3b0f14]/70";
+                } else {
+                    btn.className = "snap-center shrink-0 tab-btn flex items-center gap-4 text-left p-3 md:p-4 rounded-xl border transition-all duration-300 min-w-[200px] w-[80vw] md:w-auto bg-white/5 border-white/10 text-white hover:bg-white/10 touch-manipulation";
+                    btn.querySelector('p').className = "text-[10px] md:text-xs uppercase tracking-wider text-[#d4af37]";
+                }
+            });
+
+            // Update Content
+            const event = events[index];
+            const contentContainer = document.getElementById('ceremony-content');
+            
+            // Re-render content
+            contentContainer.innerHTML = `
+                <div class="glass-card h-full p-1 rounded-2xl border border-[#d4af37]/30 animate-fade-in-up">
+                    <div class="relative h-48 md:h-64 rounded-t-xl overflow-hidden">
+                        <img src="${event.img}" alt="${event.title}" class="w-full h-full object-cover opacity-80" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#3b0f14] to-transparent"></div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-playfair text-[#d4af37] mb-4">${event.title}</h3>
+                        <p class="mb-6 font-light leading-relaxed text-gray-300 text-sm md:text-base">${event.desc}</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center gap-3 text-[#d4af37]">
+                                <i data-lucide="clock" size="18"></i>
+                                <span>Starts at scheduled time</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#d4af37]">
+                                <i data-lucide="map-pin" size="18"></i>
+                                <span>${event.loc}</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#d4af37]">
+                                <i data-lucide="users" size="18"></i>
+                                <span>${event.dress}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons(); // Re-init icons for new content
+        }
+
+        // Initialize first tab
+        switchTab(0);
+
+        // 8. RSVP Logic
+        document.getElementById('rsvp-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = 'Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('rsvp-form').classList.add('hidden');
+                document.getElementById('rsvp-success').classList.remove('hidden');
+            }, 1500);
+        });
+
+    </script>
+</body>
+</html>
