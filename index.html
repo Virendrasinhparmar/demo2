@@ -177,11 +177,11 @@
     </section>
 
     <!-- ==================== MAIN CONTENT ==================== -->
-    <div id="main-content" class="hidden min-h-screen w-full text-[#f6efe7] font-sans selection:bg-[#d4af37] selection:text-[#3b0f14] pb-24 md:pb-0">
+    <div id="main-content" class="hidden min-h-screen w-full text-[#f6efe7] font-sans selection:bg-[#d4af37] selection:text-[#3b0f14]">
         
         <!-- Responsive Navigation -->
-        <!-- Mobile: Fixed Bottom | Desktop: Fixed Top -->
-        <nav class="fixed bottom-4 left-4 right-4 md:bottom-auto md:top-0 md:left-0 md:right-0 z-50 flex justify-center py-0 md:py-4 transition-transform duration-500" id="navbar">
+        <!-- Mobile: Fixed Top | Desktop: Fixed Top -->
+        <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 transition-transform duration-500" id="navbar">
             <div class="glass-panel w-full md:w-auto px-4 md:px-6 py-3 rounded-2xl md:rounded-full flex justify-between md:justify-center items-center gap-2 md:gap-8 text-[10px] md:text-sm tracking-widest uppercase text-[#d4af37] backdrop-blur-xl bg-[#3b0f14]/80 md:bg-[#3b0f14]/60 border border-[#d4af37]/20 shadow-2xl">
                 <a href="#home" class="flex flex-col md:block items-center hover:text-white transition-colors p-2">
                     <i data-lucide="home" class="w-4 h-4 mb-1 md:hidden"></i>
@@ -200,7 +200,7 @@
                 </div>
 
                 <!-- Logo Mobile (Center) -->
-                <div class="md:hidden flex flex-col items-center justify-center -mt-6 bg-[#3b0f14] p-3 rounded-full border border-[#d4af37] shadow-lg relative z-10">
+                <div class="md:hidden flex flex-col items-center justify-center -mb-8 translate-y-2 bg-[#3b0f14] p-3 rounded-full border border-[#d4af37] shadow-lg relative z-10">
                     <div class="font-playfair text-base text-white">A&D</div>
                 </div>
 
@@ -216,8 +216,8 @@
         </nav>
 
         <!-- Music Toggle -->
-        <!-- Mobile: Top Right | Desktop: Bottom Right -->
-        <button id="music-toggle" class="fixed top-4 right-4 md:top-auto md:bottom-6 md:right-6 z-50 p-3 rounded-full glass-panel bg-[#d4af37]/20 border border-[#d4af37]/40 hover:bg-[#d4af37]/40 transition-all text-[#d4af37] cursor-pointer touch-manipulation" title="Play Shehnai">
+        <!-- Fixed Bottom Right -->
+        <button id="music-toggle" class="fixed bottom-6 right-6 z-50 p-3 rounded-full glass-panel bg-[#d4af37]/20 border border-[#d4af37]/40 hover:bg-[#d4af37]/40 transition-all text-[#d4af37] cursor-pointer touch-manipulation" title="Play Shehnai">
             <i data-lucide="music" class="w-5 h-5"></i>
         </button>
 
@@ -719,6 +719,3 @@
 </body>
 
 </html>
-
-
-
